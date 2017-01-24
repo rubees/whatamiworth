@@ -15,3 +15,5 @@ bundle exec ruby app.rb
 ```
 
 Then browse to [http://localhost:4567](http://localhost:4567)
+
+Hello
