@@ -11,7 +11,7 @@ bundle install
 To run the app:
 
 ``` shell
-bundle exec ruby app.rb
+bundle exec rackup
 ```
 
 Then browse to [http://localhost:4567](http://localhost:4567)

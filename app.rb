@@ -5,6 +5,10 @@ configure :production do
   enable :reloader
 end
 
-get '/' do
-  erb :index
+class WhatAmIWorth < Sinatra::Base
+
+  get '/' do
+    erb :index
+  end
+
 end
