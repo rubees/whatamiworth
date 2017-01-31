@@ -3,9 +3,11 @@
   <h1>What Am I Worth?</h1>
 
   <form class="survey" method="post">
-    <label for="email">What's your email address?
-      <input type="text" name="email" value="" id="email">
-    </label>
+    <div class="form-group">
+      <label for="email">What's your email address?</label>
+      <span class="text-danger">*</span>
+      <input class="form-control" type="text" name="email" value="" id="email" placeholder="you@example.com">
+    </div>
     <br>
     <label for="github">What's your GitHub account?
       <input type="text" name="github" value="" id="github">
@@ -16,14 +18,26 @@
     </label>
     <br>
     Which city would you like to work in?
-    <label for="berlin">Berlin</label><input type="checkbox" name="city" value="berlin" id="berlin">
-    <label for="hamburg">Hamburg</label><input type="checkbox" name="city" value="hamburg" id="hamburg">
-    <label for="munich">Munich</label><input type="checkbox" name="city" value="munich" id="munich">
-    <label for="london">London</label><input type="checkbox" name="city" value="london" id="london">
-    <label for="amsterdam">Amsterdam</label><input type="checkbox" name="city" value="amsterdam" id="amsterdam">
-    <label for="other">Other</label><input type="checkbox" name="city" value="other" id="other">
+    <label for="berlin">Berlin</label>
+    <input type="checkbox" name="city" value="berlin" id="berlin">
+
+    <label for="hamburg">Hamburg</label>
+    <input type="checkbox" name="city" value="hamburg" id="hamburg">
+
+    <label for="munich">Munich</label>
+    <input type="checkbox" name="city" value="munich" id="munich">
+
+    <label for="london">London</label>
+    <input type="checkbox" name="city" value="london" id="london">
+
+    <label for="amsterdam">Amsterdam</label>
+    <input type="checkbox" name="city" value="amsterdam" id="amsterdam">
+
+    <label for="other">Other</label>
+    <input type="checkbox" name="city" value="other" id="other">
+
     <br>
-    <input type="submit" name="submit" value="Show me the Honey!">
+    <input class="btn btn-default" type="submit" name="submit" value="Show me the Honey!">
   </form>
 
 </div>
