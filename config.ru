@@ -1,8 +1,8 @@
 #\ -p 4567
-require './app'
-require 'sprockets'
+require 'bundler'
+Bundler.require
 
-require 'sinatra/reloader'
+require './app'
 
 configure :production do
   enable :reloader
@@ -12,6 +12,11 @@ map '/assets' do
   environment = Sprockets::Environment.new
   environment.append_path 'assets/javascripts'
   environment.append_path 'assets/stylesheets'
+  %w[javascripts stylesheets].each do |type|
+    environment.append_path(
+      "#{Compass::Frameworks['bootstrap'].templates_directory}/../vendor/assets/#{type}"
+    )
+  end
   run environment
 end
 
