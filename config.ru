@@ -20,6 +20,8 @@ map '/assets' do
   run environment
 end
 
+use Rack::Static, :urls => ["/images"], :root => "public"
+
 map '/' do
   run WhatAmIWorth
 end

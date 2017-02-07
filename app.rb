@@ -7,4 +7,8 @@ class WhatAmIWorth < Sinatra::Base
     erb :index
   end
 
+  get '/legal-notice' do
+    erb :legal_notice
+  end
+
 end

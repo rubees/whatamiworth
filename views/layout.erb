@@ -5,8 +5,22 @@
     <title>What Am I Worth</title>
 
     <link href="/assets/index.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200|Kanit:200" rel="stylesheet">
   </head>
   <body>
     <%= yield %>
+
+    <div class="footer">
+      <div class="container text-center">
+        <span class="footer__item">
+          Created with
+          <img class="footer__mascot" src="/images/mascot.png" alt="Mascot">
+          by
+          <a href="http://honeypot.io">Honeypot Team</a>
+          |
+          <a href="/legal-notice">Legal Notice</a>
+        </span>
+      </div>
+    </div>
   </body>
 </html>

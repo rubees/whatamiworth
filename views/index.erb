@@ -1,43 +1,134 @@
-<div class="container">
-
-  <h1>What Am I Worth?</h1>
-
-  <form class="survey" method="post">
-    <div class="form-group">
-      <label for="email">What's your email address?</label>
-      <span class="text-danger">*</span>
-      <input class="form-control" type="text" name="email" value="" id="email" placeholder="you@example.com">
+<section class="container prospects">
+  <div class="row">
+    <div class="prospects__icon-container">
+      <img src="images/brandenburger_tor.png" class="prospects__icon">
     </div>
-    <br>
-    <label for="github">What's your GitHub account?
-      <input type="text" name="github" value="" id="github">
-    </label>
-    <br>
-    <label for="linkedin">What's your LinkedIn profile?
-      <input type="text" name="linkedin" value="" id="linkedin">
-    </label>
-    <br>
-    Which city would you like to work in?
-    <label for="berlin">Berlin</label>
-    <input type="checkbox" name="city" value="berlin" id="berlin">
 
-    <label for="hamburg">Hamburg</label>
-    <input type="checkbox" name="city" value="hamburg" id="hamburg">
+    <div class="col-md-offset-1 col-md-6">
+      <h1 class="prospects__heading prospects__main-heading">What's in the pot for you?</h1>
+      <p class="prospects__intro">Ever thought about how much a software developer with your skills earns in Berlin?</p>
+      <ul class="prospects__steps">
+        <li class="media prospects__steps__item">
+          <div class="media-left">
+            <div class="prospects__steps__item-number">
+              <span class="prospects__steps__item-number__digit">
+                01
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" class="honeycomb__shape js-avatar-honeycomb" width="40" height="40" viewBox="0 -10 290.88 350.875">
+                <path d="M35.415,51.638 C59.432,38.360 83.212,24.667 106.754,10.564 C130.296,-3.539 153.828,-3.519 177.348,10.621 C200.868,24.760 224.626,38.490 248.622,51.807 C272.618,65.124 284.368,85.494 283.871,112.913 C283.374,140.333 283.352,167.753 283.806,195.174 C284.260,222.595 272.478,242.945 248.461,256.224 C224.444,269.505 200.664,283.197 177.122,297.299 C153.580,311.402 130.048,311.384 106.528,297.244 C83.008,283.104 59.250,269.374 35.254,256.056 C11.257,242.739 -0.492,222.371 0.005,194.951 C0.502,167.532 0.524,140.110 0.070,112.689 C-0.384,85.269 11.398,64.919 35.415,51.638 Z"></path>
+              </svg>
 
-    <label for="munich">Munich</label>
-    <input type="checkbox" name="city" value="munich" id="munich">
+            </div>
+          </div>
+          <div class="media-body">
+            <h3 class="prospects__steps__item-heading">
+              Send us your GitHub &amp; LinkedIn
+            </h3>
+            <p>
+              We analyze your code skills and your work experience to calculate your worth in Berlin.
+            </p>
+          </div>
+        </li>
 
-    <label for="london">London</label>
-    <input type="checkbox" name="city" value="london" id="london">
+        <li class="media prospects__steps__item">
+          <div class="media-left">
+            <div class="prospects__steps__item-number">
+              <span class="prospects__steps__item-number__digit">
+                02
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" class="honeycomb__shape js-avatar-honeycomb" width="40" height="40" viewBox="0 -10 290.88 350.875">
+                <path d="M35.415,51.638 C59.432,38.360 83.212,24.667 106.754,10.564 C130.296,-3.539 153.828,-3.519 177.348,10.621 C200.868,24.760 224.626,38.490 248.622,51.807 C272.618,65.124 284.368,85.494 283.871,112.913 C283.374,140.333 283.352,167.753 283.806,195.174 C284.260,222.595 272.478,242.945 248.461,256.224 C224.444,269.505 200.664,283.197 177.122,297.299 C153.580,311.402 130.048,311.384 106.528,297.244 C83.008,283.104 59.250,269.374 35.254,256.056 C11.257,242.739 -0.492,222.371 0.005,194.951 C0.502,167.532 0.524,140.110 0.070,112.689 C-0.384,85.269 11.398,64.919 35.415,51.638 Z"></path>
+              </svg>
 
-    <label for="amsterdam">Amsterdam</label>
-    <input type="checkbox" name="city" value="amsterdam" id="amsterdam">
+            </div>
+          </div>
+          <div class="media-body">
+            <h3 class="prospects__steps__item-heading">
+              Receive a free salary report
+            </h3>
+            <p>
+              ...which will contain a salary band based on your profile and the current job market in Berlin.
+            </p>
+          </div>
+        </li>
 
-    <label for="other">Other</label>
-    <input type="checkbox" name="city" value="other" id="other">
+        <li class="media prospects__steps__item">
+          <div class="media-left">
+            <div class="prospects__steps__item-number">
+              <span class="prospects__steps__item-number__digit">
+                03
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" class="honeycomb__shape js-avatar-honeycomb" width="40" height="40" viewBox="0 -10 290.88 350.875">
+                <path d="M35.415,51.638 C59.432,38.360 83.212,24.667 106.754,10.564 C130.296,-3.539 153.828,-3.519 177.348,10.621 C200.868,24.760 224.626,38.490 248.622,51.807 C272.618,65.124 284.368,85.494 283.871,112.913 C283.374,140.333 283.352,167.753 283.806,195.174 C284.260,222.595 272.478,242.945 248.461,256.224 C224.444,269.505 200.664,283.197 177.122,297.299 C153.580,311.402 130.048,311.384 106.528,297.244 C83.008,283.104 59.250,269.374 35.254,256.056 C11.257,242.739 -0.492,222.371 0.005,194.951 C0.502,167.532 0.524,140.110 0.070,112.689 C-0.384,85.269 11.398,64.919 35.415,51.638 Z"></path>
+              </svg>
 
-    <br>
-    <input class="btn btn-default" type="submit" name="submit" value="Show me the Honey!">
-  </form>
+            </div>
+          </div>
+          <div class="media-body">
+            <h3 class="prospects__steps__item-heading">
+              Show me the honey!
+            </h3>
+            <p>
+              Knowing your worth you can renegotiate your current salary or find a new job.
+            </p>
+          </div>
+        </li>
 
-</div>
+      </ul>
+    </div>
+
+    <form class="col-md-4 prospects__form survey" method="post">
+      <div class="form-group prospects__form-group">
+        <label class="prospects__label" for="email">What's your email address?</label>
+        <span class="text-danger">*</span>
+        <input class="form-control" type="text" name="email" value="" id="email" placeholder="you@example.com">
+      </div>
+
+      <div class="form-group prospects__form-group">
+        <label class="prospects__label" for="prospect_profile_link">Profile</label><span class="text-danger">*</span>
+        <input class="form-control prospects__input-top" id="prospect_profile_link" name="prospect[profile_link]" placeholder="LinkedIn profile" type="text">
+        <input class="form-control prospects__input-bottom" id="prospect_dev_link" name="prospect[dev_link]" placeholder="GitHub profile" type="text">
+      </div>
+
+      <div class="prospects__city__title">
+        Which city would you like to work in?
+      </div>
+
+      <div class="prospects__city col-md-6">
+        <div class="prospects__city__item">
+          <input type="checkbox" name="city" value="berlin" id="berlin">
+          <label class="prospects__label" for="berlin">Berlin</label>
+        </div>
+
+        <div class="prospects__city__item">
+          <input type="checkbox" name="city" value="hamburg" id="hamburg">
+          <label class="prospects__label" for="hamburg">Hamburg</label>
+        </div>
+
+        <div class="prospects__city__item">
+          <input type="checkbox" name="city" value="munich" id="munich">
+          <label class="prospects__label" for="munich">Munich</label>
+        </div>
+      </div>
+
+      <div class="prospects__city col-md-6">
+        <div class="prospects__city__item">
+          <input type="checkbox" name="city" value="london" id="london">
+          <label class="prospects__label" for="london">London</label>
+        </div>
+
+        <div class="prospects__city__item">
+          <input type="checkbox" name="city" value="amsterdam" id="amsterdam">
+          <label class="prospects__label" for="amsterdam">Amsterdam</label>
+        </div>
+
+        <div class="prospects__city__item">
+          <input type="checkbox" name="city" value="other" id="other">
+          <label class="prospects__label" for="other">Other</label>
+        </div>
+      </div>
+
+      <input class="btn btn-primary prospects__btn" type="submit" name="submit" value="Show me the Honey!">
+    </form>
+  </div>
+  </div>
