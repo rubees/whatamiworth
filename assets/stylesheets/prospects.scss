@@ -1,0 +1,97 @@
+.prospects {
+    padding-top: 105px;
+}
+
+.prospects__heading {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.prospects__intro {
+    font-size: 22px;
+    font-weight: 100;
+    color: #94a2b1;
+}
+
+.prospects__steps__item-heading {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    margin-top: 0;
+}
+
+.prospects__steps {
+    width: 410px;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.prospects__icon-container {
+    margin-bottom: 43px;
+    text-align: center;
+}
+
+
+.prospects__icon {
+    width: 84px;
+    height: 78px;
+}
+
+.prospects__steps__item-number .honeycomb__shape {
+    width: 45px;
+    height: 45px;
+    fill: transparent;
+    stroke: #ffba00;
+    stroke-width: 20px;
+}
+
+.prospects__steps__item p {
+    color: #94a2b1;
+}
+
+.prospects__steps__item-number {
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
+
+.prospects__steps__item-number__digit {
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffba00;
+    width: 100%;
+    line-height: 45px;
+    text-align: center;
+}
+
+.prospects__form {
+    margin-top: 30px;
+}
+
+.prospects__form-group {
+    margin: 0 0 34px;
+}
+
+.prospects__emphasis, .prospects__label {
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+}
+
+.prospects__input-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.prospects__input-bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.prospects__btn {
+    width: 100%;
+}

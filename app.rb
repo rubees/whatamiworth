@@ -12,7 +12,7 @@ class WhatAmIWorth < Sinatra::Base
     erb :index
   end
 
-  post '/' do
+  post '/confirmation' do
     erb :confirmation
   end
 
