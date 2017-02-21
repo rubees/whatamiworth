@@ -13,6 +13,12 @@ class WhatAmIWorth < Sinatra::Base
   end
 
   post '/confirmation' do
+    @email = params["email"]
+    @profile_link = params["profile_link"]
+    @dev_link = params["dev_link"]
+    @main_language = params["main_language"]
+    @experience = params["experience"]
+    @cities = params["cities"]
     erb :confirmation
   end
 

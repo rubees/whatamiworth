@@ -9,5 +9,14 @@
       <h1 class="confirmation__heading confirmation__heading">Thank you for signing up!</h1>
       <p class="confirmation__intro">&ldquo;You'll soon be able to see real time salary estimates based on your GitHub profile right here... Stay tuned, young Grasshopper.&rdquo; - Sohraab Joshi</p>
 
+      <p>Thanks for signing up to What Am I Worth! Here's the information you submitted.</p>
+
+      <p>How to reach you: <%= @email %></p>
+      <p>Your LinkedIn: <%= @profile_link %></p>
+      <p>Your GitHub: <%= @dev_link %></p>
+      <p>Your focus: <%= @main_language %></p>
+      <p>Years of experience: <%= @experience.sub('..',' to ') %></p>
+      <p>Where you want to work: <%= @cities.map {|x| x.capitalize}.join(', ') %></p>
+
     </div>
   </div>
