@@ -1,0 +1,114 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+
+require 'csv'
+require 'pp'
+
+def cleanup_salary(salary)
+  return if salary == nil
+
+  salary = salary
+             .gsub(/\(.*\)/, '')
+             .gsub(/50\.00$/, '50000')
+             .gsub(/[\., ]/, '')
+             .gsub(/^[^\d]+/, '')
+             .gsub(/[^\d]+$/, '')
+             .gsub(/([3-9])0{5}/, '\10000')
+
+  case salary
+  when /^(\d{2})[^\d]*$/
+    result = $1.to_i * 1000
+    [:branch1, result, result]
+  when /^(\d{5,6})[^\d]*$/
+    result = $1.to_i
+    [:branch2, result, result]
+  when /^(\d{2,})[^\d]+(\d{2,})/
+    bottom = $1.to_i
+    top = $2.to_i
+
+    if bottom <= 1000
+      bottom = bottom * 1000
+    end
+
+    if top <= 1000
+      top = top * 1000
+    end
+
+    [:branch3, bottom, top]
+  else
+    [:else]
+  end
+end
+
+result = CSV.generate do |csv|
+  csv << %w[salary_bottom salary_top old_salary_bottom old_salary_top
+            location position work_languages work_experience work_authorization]
+
+  CSV.open(ARGV.first).each.drop(1).each do |line|
+    salary                  = line[0]
+    old_salary_expectations = line[23]
+    location                = line[6]
+    position                = line[3]
+    work_languages          = line[31]
+    work_experience         = line[28]
+    work_authorization      = line[32]
+
+    _, salary_bottom, salary_top = cleanup_salary(salary)
+    _, old_salary_bottom, old_salary_top = cleanup_salary(old_salary_expectations)
+
+    difference = if salary_top && salary_bottom
+                   salary_top - salary_bottom
+                 end
+
+    csv << [salary_bottom, salary_top,
+            old_salary_top, old_salary_bottom,
+            location, position, work_languages,
+            work_experience, work_authorization]
+  end
+end
+
+print result
+
+# CSV.open(ARGV.first).each do |line|
+#   salary                  = line[0]
+#   old_salary_expectations = line[23]
+#   if cleanup_salary(salary) == [:else, 0, 0]
+#     puts salary
+#   end
+#   if cleanup_salary(old_salary_expectations) == [:else, 0, 0]
+#     puts salary
+#   end
+# end
+
+__END__
+
+
+def test_cleanup_salary(input, expected_low, expected_high)
+  branch, low, high = cleanup_salary(input)
+  unless low == expected_low && high == expected_high
+    puts "Test failed: #{input} expected "+
+         "#{[expected_low, expected_high]} " +
+         "but got #{[low, high]} (took #{branch})"
+  end
+end
+
+test_cleanup_salary '50000', 50000, 50000
+test_cleanup_salary '50', 50000, 50000
+test_cleanup_salary '50.000-60.000', 50000, 60000
+test_cleanup_salary '50.000€-60.000€', 50000, 60000
+test_cleanup_salary '50,000€ - 60,000€', 50000, 60000
+test_cleanup_salary '50,000€ to 60,000€', 50000, 60000
+test_cleanup_salary '50 - 60000', 50000, 60000
+test_cleanup_salary '50000 - 60000', 50000, 60000
+test_cleanup_salary '36.000€', 36000, 36000
+test_cleanup_salary '50,000+', 50000, 50000
+test_cleanup_salary '£50,000-60,000 DOE',  50000, 60000
+test_cleanup_salary '40,000+', 40000, 40000
+test_cleanup_salary '50.000 €', 50000, 50000
+test_cleanup_salary '50000€', 50000, 50000
+test_cleanup_salary '65.000 €', 65000, 65000
+test_cleanup_salary '50-60k', 50000, 60000
+test_cleanup_salary '50.0000 - 60000', 50_000, 60_000
+test_cleanup_salary '70 000 - 75 000', 70000, 75000
+test_cleanup_salary '40.000-50.00', 40000, 5000
+test_cleanup_salary '40,000€ (salary raise/revision after 6 months)', 40000, 40000
