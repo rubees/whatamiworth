@@ -23,6 +23,17 @@ class WhatAmIWorth < Sinatra::Base
   end
 
   post '/confirmation' do
+    applicant = Applicant.new(
+      email: params["email"], 
+      github: params["profile_link"], 
+      linkedin: params["dev_link"],
+      main_language: params["main_language"], 
+      years_of_experience: params["experience"].to_i, 
+      cities: params["cities"].join(",")
+    )
+    if applicant.valid?
+      applicant.save
+    end
     @email = params["email"]
     @profile_link = params["profile_link"]
     @dev_link = params["dev_link"]
