@@ -1,11 +1,21 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/activerecord'
+require_relative 'models/applicant'
+
+configure :development do
+  register Sinatra::Reloader
+  set :database, {
+      :adapter => 'sqlite3',
+      :database =>  'whatamiworth.sqlite3.db'
+  }
+end
 
 class WhatAmIWorth < Sinatra::Base
 
-  configure do
-    register Sinatra::Reloader
-  end
+  # configure :production do
+  #   set :database, {}
+  # end
 
   get '/' do
     # looks for views/index.erb
