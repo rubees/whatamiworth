@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
+
 require_relative 'models/applicant'
+require_relative 'models/offer'
 
 configure :development do
   register Sinatra::Reloader
