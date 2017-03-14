@@ -61,7 +61,7 @@ result = CSV.generate do |csv|
                  end
 
     csv << [salary_bottom, salary_top,
-            old_salary_top, old_salary_bottom,
+            old_salary_bottom, old_salary_top,
             location, position, work_languages,
             work_experience, work_authorization]
   end

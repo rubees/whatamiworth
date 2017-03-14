@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307162752) do
+ActiveRecord::Schema.define(version: 20170314161038) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "email"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 20170307162752) do
     t.string   "cities"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer  "salary_bottom"
+    t.integer  "salary_top"
+    t.integer  "old_salary_bottom"
+    t.integer  "old_salary_top"
+    t.string   "location"
+    t.string   "position"
+    t.string   "work_languages"
+    t.integer  "work_experience"
+    t.string   "work_authorization"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end
