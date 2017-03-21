@@ -26,11 +26,11 @@ class WhatAmIWorth < Sinatra::Base
 
   post '/confirmation' do
     applicant = Applicant.new(
-      email: params["email"], 
-      github: params["profile_link"], 
+      email: params["email"],
+      github: params["profile_link"],
       linkedin: params["dev_link"],
-      main_language: params["main_language"], 
-      years_of_experience: params["experience"].to_i, 
+      main_language: params["main_language"],
+      years_of_experience: params["experience"].to_i,
       cities: params["cities"].join(",")
     )
     if applicant.valid?
@@ -42,6 +42,19 @@ class WhatAmIWorth < Sinatra::Base
     @main_language = params["main_language"]
     @experience = params["experience"]
     @cities = params["cities"]
+
+    offers = Offer
+               .where("position LIKE ? OR work_languages LIKE ?",
+                      "%#{@main_language}%",
+                      "%#{@main_language}%")
+               .where(:work_experience => @experience)
+
+    salary_bottoms = offers.map(&:salary_bottom).compact
+    @salary_bottom_avg = salary_bottoms.inject(&:+) / salary_bottoms.count
+
+    salary_tops = offers.map(&:salary_top).compact
+    @salary_top_avg = salary_tops.inject(&:+) / salary_tops.count
+
     erb :confirmation
   end
 
