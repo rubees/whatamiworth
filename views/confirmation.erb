@@ -14,9 +14,8 @@
       <p>How to reach you: <%= @email %></p>
       <p>Your LinkedIn: <%= @profile_link %></p>
       <p>Your GitHub: <%= @dev_link %></p>
-      <p>Your focus: <%= @main_language %></p>
-      <p>Years of experience: <%= @experience.sub('..',' to ') %></p>
       <p>Where you want to work: <%= @cities.map {|x| x.capitalize}.join(', ') %></p>
 
+      <p>A <%= @main_language %> developer with <%= @experience.sub('..',' to ') %> years of experience earns between &euro; <%= @salary_bottom_avg %> and &euro; <%= @salary_top_avg %> on average</p>
     </div>
   </div>
