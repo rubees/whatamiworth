@@ -1,0 +1,74 @@
+<form class="prospects__form survey" method="post" action="/confirmation">
+  <div class="form-group prospects__form-group prospects__form-group_name">
+    <label class="prospects__label" for="name">What's your name</label>
+    <span class="text-danger">*</span>
+    <input class="form-control" type="text" name="name" value="" id="name" placeholder="John Doe">
+  </div>
+
+  <div class="form-group prospects__form-group">
+    <label class="prospects__label" for="email">What's your email address?</label>
+    <span class="text-danger">*</span>
+    <input class="form-control" type="text" name="email" value="" id="email" placeholder="you@example.com">
+  </div>
+
+  <div class="form-group prospects__form-group">
+    <label class="prospects__label" for="prospect_profile_link">Profile</label><span class="text-danger">*</span>
+    <input class="form-control prospects__input-top" id="prospect_profile_link" name="profile_link" placeholder="LinkedIn profile" type="text">
+    <input class="form-control prospects__input-bottom" id="prospect_dev_link" name="dev_link" placeholder="GitHub profile" type="text">
+  </div>
+
+  <div class="form-group prospects__form-group">
+    <label class="prospects__label" for="prospect_main_language">What's Your Main Language?</label><span class="text-danger">*</span>
+    <input class="form-control" id="prospect_main_language" name="main_language" placeholder="Ruby, Java, PHP, etc." type="text">
+  </div>
+
+  <div class="form-group prospects__form-group">
+    <label class="prospects__label" for="prospect_years_of_experience">How Many Years of Software Development Experience do You Have?</label><span class="text-danger">*</span>
+    <select class="form-control" name="experience" id="prospect_years_of_experience">
+      <option value="0..1">Less than 1 years</option>
+      <option value="1..2" selected>1 to 2 years</option>
+      <option value="2..4">2 to 4 years</option>
+      <option value="4..6">4 to 6 years</option>
+      <option value="6..8">6 to 8 years</option>
+      <option value="8..">More than 8 years</option>
+    </select>
+  </div>
+
+  <div class="prospects__city__title">
+    Which city would you like to work in?
+  </div>
+
+  <div class="prospects__cities">
+      <div class="prospects__city__item">
+        <input type="checkbox" name="cities[]" value="berlin" id="berlin">
+        <label class="prospects__label" for="berlin">Berlin</label>
+      </div>
+
+      <div class="prospects__city__item">
+        <input type="checkbox" name="cities[]" value="hamburg" id="hamburg">
+        <label class="prospects__label" for="hamburg">Hamburg</label>
+      </div>
+      <div class="prospects__city__item">
+        <input type="checkbox" name="cities[]" value="munich" id="munich">
+        <label class="prospects__label" for="munich">Munich</label>
+      </div>
+
+      <div class="prospects__city__item">
+        <input type="checkbox" name="cities[]" value="london" id="london">
+        <label class="prospects__label" for="london">London</label>
+      </div>
+
+      <div class="prospects__city__item">
+        <input type="checkbox" name="cities[]" value="amsterdam" id="amsterdam">
+        <label class="prospects__label" for="amsterdam">Amsterdam</label>
+      </div>
+
+      <div class="prospects__city__item">
+        <input type="checkbox" name="cities[]" value="other" id="other">
+        <label class="prospects__label" for="other">Other</label>
+      </div>
+
+  </div>
+
+  <input class="btn btn-primary prospects__btn" type="submit" name="submit" value="Show me the Honey!">
+</form>

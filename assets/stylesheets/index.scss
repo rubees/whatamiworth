@@ -1,18 +1,22 @@
-$brand-primary: #ffba00;
-
 @import "bootstrap";
 @import "prospects";
 @import "confirmation";
+@import "colors";
+
+@font-face {
+    font-family: "Proxima-Nova";
+    src: url("https://www.honeypot.io/fonts/ProximaNova-Regular.otf") format("opentype");
+}
 
 h1, h2, h3, h4, h5, .btn {
-    font-family: 'Kanit', sans-serif;
+    font-family: "Proxima-Nova", sans-serif;
 }
 
 
 html, body {
-    color: #fff;
-    background-color: #1f2228;
-    font-family: 'Dosis', sans-serif;
+    color: $fg-color;
+    background-color: $bg-color;
+    font-family: "Proxima-Nova", sans-serif;
 }
 
 .legal__panel {
@@ -29,4 +33,19 @@ html, body {
     width: 26px;
     height: 33px;
     margin-top: -5px;
+}
+
+.honeypot-logo {
+    width: 250px;
+    float: right;
+}
+
+.header {
+    color: $bg-color;
+    background-color: $fg-color;
+    padding-top: 30px;
+}
+
+.header h1 {
+    line-height: 150px;
 }
