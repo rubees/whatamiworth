@@ -1,3 +1,3 @@
 class Applicant < ActiveRecord::Base
-
-end 
+  validates_presence_of :name
+end

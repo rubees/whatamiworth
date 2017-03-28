@@ -3,16 +3,24 @@
 
     <div class="col-md-12">
 
+
       <h1 class="confirmation__heading confirmation__heading">Thank you for signing up!</h1>
+
+      <p>Hi, <%= @applicant.name %>!</p>
+
       <p class="confirmation__intro">&ldquo;You'll soon be able to see real time salary estimates based on your GitHub profile right here... Stay tuned, young Grasshopper.&rdquo; - Sohraab Joshi</p>
 
       <p>Thanks for signing up to What Am I Worth! Here's the information you submitted.</p>
 
-      <p>How to reach you: <%= @email %></p>
-      <p>Your LinkedIn: <%= @profile_link %></p>
-      <p>Your GitHub: <%= @dev_link %></p>
-      <p>Where you want to work: <%= @cities.map {|x| x.capitalize}.join(', ') %></p>
+      <p>How to reach you: <%= @applicant.email %></p>
+      <p>Your LinkedIn: <%= @applicant.linkedin %></p>
+      <p>Your GitHub: <%= @applicant.github %></p>
+      <p>Where you want to work: <%= @applicant.cities %></p>
 
-      <p>A <%= @main_language %> developer with <%= @experience.sub('..',' to ') %> years of experience earns between &euro; <%= @salary_bottom_avg %> and &euro; <%= @salary_top_avg %> on average</p>
+      <p>A
+        <%= @applicant.main_language %> developer with
+        <%= @applicant.years_of_experience %> years of experience earns between &euro;
+        <%= @salary_bottom_avg %> and &euro;
+        <%= @salary_top_avg %> on average</p>
     </div>
   </div>
