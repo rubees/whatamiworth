@@ -1,11 +1,15 @@
 # Todos
 
+- Save the name
 - Make confirmation page pretty
 - Fix bad data
 - Refactor confirmation action
 - Add tests
 - See if we can get a "offer" webhook
 - show random bearpot (esp. the rapper one *HONEY*)
+- Take location into account when calculating salary
+- Handle the case where no matches are found
+- mention the amount of offers found
 
 ## Bad data
 
