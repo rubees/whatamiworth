@@ -1,30 +1,28 @@
+@import "colors";
+
 .prospects {
-    padding-top: 105px;
+    padding-top: 75px;
 }
 
 .prospects__heading {
     font-size: 30px;
     font-weight: 800;
-    color: #fff;
 }
 
 .prospects__intro {
     font-size: 22px;
     font-weight: 100;
-    color: #94a2b1;
 }
 
 .prospects__steps__item-heading {
     font-size: 18px;
     font-weight: 800;
-    color: #fff;
     margin-top: 0;
 }
 
 .prospects__steps {
-    width: 410px;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 250px;
 }
 
 .prospects__icon-container {
@@ -42,12 +40,11 @@
     width: 45px;
     height: 45px;
     fill: transparent;
-    stroke: #ffba00;
+    stroke: $accent-color;
     stroke-width: 20px;
 }
 
 .prospects__steps__item p {
-    color: #94a2b1;
 }
 
 .prospects__steps__item-number {
@@ -62,7 +59,7 @@
     position: absolute;
     font-size: 15px;
     font-weight: 800;
-    color: #ffba00;
+    color: $accent-color;
     width: 100%;
     line-height: 45px;
     text-align: center;
@@ -78,7 +75,6 @@
 
 .prospects__emphasis, .prospects__label {
     font-weight: 800;
-    color: #fff;
     font-family: 'Kanit', sans-serif;
 }
 
@@ -92,6 +88,21 @@
     border-top-right-radius: 0;
 }
 
+.prospects__cities {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prospects__city__title {
+    margin-bottom: 5px;
+}
+
+.prospects__city {
+    padding: 20px;
+}
+
+
 .prospects__btn {
-    width: 100%;
+    margin: 20px auto 0 auto;
+    display: block;
 }

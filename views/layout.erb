@@ -8,10 +8,17 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:200|Kanit:200" rel="stylesheet">
   </head>
   <body>
-    <%= yield %>
-    <div class="header">
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <h1 class="col-xs-9">What are <em>You</em> worth?</h1>
+          <img class="col-xs-3 honeypot-logo" src="images/honeypot_researcher_headphones.png" alt="Honeypot logo">
+        </div>
+      </div>
+    </header>
 
-    </div>
+    <%= yield %>
+
     <div class="footer">
       <div class="container text-center">
         <span class="footer__item">
