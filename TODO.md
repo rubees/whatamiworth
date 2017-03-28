@@ -1,6 +1,5 @@
 # Todos
 
-- Save the name
 - Make confirmation page pretty
 - Fix bad data
 - Refactor confirmation action

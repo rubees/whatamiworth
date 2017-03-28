@@ -22,7 +22,7 @@ class WhatAmIWorth < Sinatra::Base
   # end
 
   get '/' do
-    # looks for views/index.erb
+    @applicant = Applicant.new
     erb :index
   end
 
@@ -39,11 +39,7 @@ class WhatAmIWorth < Sinatra::Base
     if @applicant.valid?
       @applicant.save
 
-      offers = Offer
-                 .where("position LIKE ? OR work_languages LIKE ?",
-                        "%#{@applicant.main_language}%",
-                        "%#{@applicant.main_language}%")
-                 .where(:work_experience => @applicant.years_of_experience)
+      offers = Offer.for_applicant(@applicant)
 
       salary_bottoms = offers.map(&:salary_bottom).compact
       @salary_bottom_avg = salary_bottoms.inject(&:+) / salary_bottoms.count

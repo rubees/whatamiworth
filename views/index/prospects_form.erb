@@ -1,3 +1,11 @@
+<div class="errors">
+  <ul>
+    <% @applicant.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+
 <form class="prospects__form survey" method="post" action="/confirmation">
   <div class="form-group prospects__form-group prospects__form-group_name">
     <label class="prospects__label" for="name">What's your name</label>
