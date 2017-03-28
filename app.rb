@@ -6,14 +6,16 @@ require_relative 'models/applicant'
 require_relative 'models/offer'
 
 configure :development do
-  register Sinatra::Reloader
   set :database, {
-      :adapter => 'sqlite3',
-      :database =>  'whatamiworth.sqlite3.db'
-  }
+        :adapter => 'sqlite3',
+        :database =>  'whatamiworth.sqlite3.db'
+      }
 end
 
 class WhatAmIWorth < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   # configure :production do
   #   set :database, {}
